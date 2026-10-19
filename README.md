@@ -1,6 +1,6 @@
 # Synapse par ELO — site vitrine
 
-Page française inspirée de la structure de [FlowBoard](https://maofryy.github.io/flowboard-vitrine/), adaptée aux usages et à l’identité Synapse. Nouveau fond clair blanc cassé et bleu ELO, sans l’ancien décor gris-vert. Auteur : Krishan Navas.
+Site vitrine en français présentant Synapse par ELO, ses fonctionnalités et ses films de démonstration. Identité visuelle : fond clair blanc cassé et bleu ELO. Auteur : Krishan Navas.
 
 Site : https://nkrishan06.github.io/synapse/
 
