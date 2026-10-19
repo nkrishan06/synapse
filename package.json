@@ -1,0 +1,11 @@
+{
+  "name": "synapse-vitrine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "author": "Krishan Navas",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

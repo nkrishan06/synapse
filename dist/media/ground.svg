@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1400" fill="none" preserveAspectRatio="xMidYMin slice">
+  <defs>
+    <linearGradient id="base" x1="150" y1="0" x2="1450" y2="1300" gradientUnits="userSpaceOnUse"><stop stop-color="#163b49"/><stop offset=".48" stop-color="#54737b"/><stop offset="1" stop-color="#dfe6e7"/></linearGradient>
+    <linearGradient id="silk" x1="530" y1="130" x2="1530" y2="1130" gradientUnits="userSpaceOnUse"><stop stop-color="#c4d3d5" stop-opacity="0"/><stop offset=".43" stop-color="#dbe5e5" stop-opacity=".48"/><stop offset=".57" stop-color="#93afb4" stop-opacity=".3"/><stop offset="1" stop-color="#e0e9e7" stop-opacity="0"/></linearGradient>
+    <linearGradient id="edge" x1="1220" y1="0" x2="1280" y2="1100" gradientUnits="userSpaceOnUse"><stop stop-color="#d2e1e0" stop-opacity=".08"/><stop offset=".5" stop-color="#c8d9d7" stop-opacity=".58"/><stop offset="1" stop-color="#d7e4e4" stop-opacity="0"/></linearGradient>
+    <linearGradient id="shade" x1="270" y1="100" x2="1440" y2="700" gradientUnits="userSpaceOnUse"><stop stop-color="#0d303e" stop-opacity=".58"/><stop offset="1" stop-color="#143b49" stop-opacity="0"/></linearGradient>
+  </defs>
+  <path fill="url(#base)" d="M0 0h1800v1400H0z"/>
+  <path d="M700-180C680 100 1130 146 1520 290c380 142 460 282 200 410S957 900 761 1420h715c-9-282 87-413 329-535V-180Z" fill="url(#silk)"/>
+  <path d="M1130-100C900 70 1109 202 1434 334s433 204 257 317-540 147-698 407c242-254 595-226 765-375 207-181-30-300-310-421S1098 80 1330-100Z" fill="url(#edge)"/>
+  <path d="M1800 210C1410 370 992 395 736 707S422 1116-100 1180v220c600-125 755-407 975-666s565-288 925-317Z" fill="url(#silk)" opacity=".62"/>
+  <path fill="url(#shade)" d="M0 0h1800v1400H0z"/>
+</svg>
