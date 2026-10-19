@@ -10,11 +10,14 @@ const html = await readFile(resolve(dist, 'index.html'), 'utf8');
 const css = await readFile(resolve(dist, 'styles.css'), 'utf8');
 const js = await readFile(resolve(dist, 'app.js'), 'utf8');
 const filmManifest = JSON.parse(await readFile(new URL('./media-manifest.json', import.meta.url), 'utf8'));
+assert.ok(filmManifest.every((film) => film.productVersion === 2 && film.source.startsWith('synapse-video/RFP-v2/')), 'Only validated Synapse v2 films');
+assert.deepEqual(filmManifest.map((film) => film.name), ['synapse-rfp-en', 'synapse-roi-en', 'synapse-mcp-en'], 'Synapse v2 collection: configuration, ROI and MCP');
 assert.match(html, /<html lang="fr">/);
 assert.equal([...html.matchAll(/<h1\b/g)].length, 1, 'One primary heading');
 assert.equal([...html.matchAll(/<video\b/g)].length, filmManifest.length, 'All current product films');
 const filmSources = [...html.matchAll(/<source src="([^"]+)" type="video\/mp4">/g)].map((match) => match[1]);
-assert.deepEqual(filmSources, filmManifest.map((film) => `media/${film.name}.mp4`), 'Final overview, RFP, ROI, MCP and eBonding films');
+assert.deepEqual(filmSources, filmManifest.map((film) => `media/${film.name}.mp4`), 'Final Synapse v2 RFP, ROI and MCP films');
+assert.doesNotMatch(html, /synapse-overview-en|synapse-ebonding-en|0:44|0:50/, 'No Synapse v1 films or obsolete durations');
 assert.doesNotMatch(html, /Capture sans audio|en français, 40 secondes|media\/(?:presentation|diagnostic|assistant|reconciliation)\.(?:mp4|jpg)/, 'No obsolete clips or labels');
 assert.doesNotMatch(html, /\bautoplay\b|https?:\/\/localhost|file:\/\//, 'No autoplay or local URLs');
 assert.match(css, /prefers-reduced-motion/);
@@ -54,8 +57,8 @@ vm.runInNewContext(js, { HTMLVideoElement: MockVideo, document: {
   addEventListener: (name, handler) => { assert.equal(name, 'play'); playHandler = handler; },
 } });
 playHandler({ target: videos[1] });
-assert.deepEqual(videos.map((video) => video.pausedCalls), [1, 0, 1, 1, 1]);
+assert.deepEqual(videos.map((video) => video.pausedCalls), [1, 0, 1]);
 playHandler({ target: {} });
-assert.deepEqual(videos.map((video) => video.pausedCalls), [1, 0, 1, 1, 1]);
+assert.deepEqual(videos.map((video) => video.pausedCalls), [1, 0, 1]);
 assert.ok(!js.includes('localStorage') && !js.includes('fetch('), 'No tracking or network calls');
 console.log(`PASS: ${checked} local assets, anchors, French metadata, video accessibility attributes and single-video playback.`);

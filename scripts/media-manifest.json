@@ -1,7 +1,5 @@
 [
-  { "name": "synapse-overview-en", "source": "synapse-video/Synapse-first-English.mp4", "duration": 44, "poster": 6 },
-  { "name": "synapse-rfp-en", "source": "synapse-video/RFP-v2/Hyperframes-v5/Synapse-RFP-2.mp4", "duration": 40, "poster": 13 },
-  { "name": "synapse-roi-en", "source": "synapse-video/RFP-v2/Hyperframes-ROI/Synapse-RFP-English-ROI-Final-v2.mp4", "duration": 52, "poster": 28 },
-  { "name": "synapse-mcp-en", "source": "synapse-video/RFP-v2/Hyperframes-MCP/Synapse-MCP-English-final.mp4", "duration": 34, "poster": 12 },
-  { "name": "synapse-ebonding-en", "source": "synapse-video/deuxieme video/Synapse-eBonding-English-v2.mp4", "duration": 50, "poster": 23 }
+  { "name": "synapse-rfp-en", "source": "synapse-video/RFP-v2/Hyperframes-v5/Synapse-RFP-2.mp4", "productVersion": 2, "duration": 40, "poster": 13 },
+  { "name": "synapse-roi-en", "source": "synapse-video/RFP-v2/Hyperframes-ROI/Synapse-RFP-English-ROI-Final-v2.mp4", "productVersion": 2, "duration": 52, "poster": 28 },
+  { "name": "synapse-mcp-en", "source": "synapse-video/RFP-v2/Hyperframes-MCP/Synapse-MCP-English-final.mp4", "productVersion": 2, "duration": 34, "poster": 12 }
 ]
