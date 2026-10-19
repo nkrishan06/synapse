@@ -13,6 +13,7 @@ const filmManifest = JSON.parse(await readFile(new URL('./media-manifest.json', 
 assert.ok(filmManifest.every((film) => film.productVersion === 2 && film.source.startsWith('synapse-video/RFP-v2/')), 'Only validated Synapse v2 films');
 assert.deepEqual(filmManifest.map((film) => film.name), ['synapse-rfp-en', 'synapse-roi-en', 'synapse-mcp-en'], 'Synapse v2 collection: configuration, ROI and MCP');
 assert.match(html, /<html lang="fr">/);
+assert.doesNotMatch(html, /\b(?:v\d+|version\s+\d+)\b/i, 'No product version in marketing copy, accessibility labels or metadata');
 assert.equal([...html.matchAll(/<h1\b/g)].length, 1, 'One primary heading');
 assert.equal([...html.matchAll(/<video\b/g)].length, filmManifest.length, 'All current product films');
 const filmSources = [...html.matchAll(/<source src="([^"]+)" type="video\/mp4">/g)].map((match) => match[1]);

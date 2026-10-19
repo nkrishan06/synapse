@@ -25,15 +25,15 @@ Ouvrir l’adresse affichée, normalement http://127.0.0.1:8792/. Le fichier `di
 
 ## Médias
 
-La vitrine présente uniquement les trois films de Synapse v2 : configuration IA en ouverture, puis ROI et MCP. Ils sont conservés intégralement en anglais, en H.264 1920 × 1080 avec leur bande-son AAC originale, sans réencodage ni coupe. Les métadonnées sont placées en tête pour le démarrage web. `scripts/media-manifest.json` identifie précisément les sources et leur version produit :
+La vitrine présente trois films Synapse : configuration IA en ouverture, puis ROI et MCP. Ils sont conservés intégralement en anglais, en H.264 1920 × 1080 avec leur bande-son AAC originale, sans réencodage ni coupe. Les métadonnées sont placées en tête pour le démarrage web. `scripts/media-manifest.json` conserve la traçabilité des sources validées.
 
-| Film | Source dans le workspace | Durée vérifiée |
+| Film | Fichier publié | Durée vérifiée |
 | --- | --- | --- |
-| Configuration IA / RFP | `synapse-video/RFP-v2/Hyperframes-v5/Synapse-RFP-2.mp4` | 40 s |
-| ROI | `synapse-video/RFP-v2/Hyperframes-ROI/Synapse-RFP-English-ROI-Final-v2.mp4` | 52 s |
-| MCP | `synapse-video/RFP-v2/Hyperframes-MCP/Synapse-MCP-English-final.mp4` | 34 s |
+| Configuration IA / RFP | `dist/media/synapse-rfp-en.mp4` | 40 s |
+| ROI | `dist/media/synapse-roi-en.mp4` | 52 s |
+| MCP | `dist/media/synapse-mcp-en.mp4` | 34 s |
 
-Les affiches proviennent des mêmes films. Les données sont celles de l’environnement de démonstration. Les montants du film ROI sont des estimations liées au scénario illustré. L’IA prépare des brouillons ; l’équipe conserve la validation et la mise en service. Les films de présentation de 44 s et d’eBonding de 50 s correspondaient à Synapse v1 et ont été retirés de la publication ; le suffixe « English-v2 » de l’ancien fichier eBonding désignait une révision du film, pas la version produit.
+Les affiches proviennent des mêmes films. Les données sont celles de l’environnement de démonstration. Les montants du film ROI sont des estimations liées au scénario illustré. L’IA prépare des brouillons ; l’équipe conserve la validation et la mise en service.
 
 La présentation dispose d’un résumé français dépliable ; chaque film a une description française adjacente. Une transcription mot à mot et des sous-titres synchronisés des films restent à produire si une conformité complète des médias est requise.
 
