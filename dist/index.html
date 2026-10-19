@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f0f4fa">
+  <meta name="theme-color" content="#1d3f73">
   <title>Synapse par ELO — Vos intégrations ServiceNow, sous contrôle.</title>
   <meta name="description" content="Découvrez Synapse v2 en trois films : configuration assistée par IA, retour sur investissement et MCP. Une solution ServiceNow conçue par ELO.">
   <meta property="og:type" content="website">
@@ -16,7 +16,9 @@
   <link rel="canonical" href="https://nkrishan06.github.io/synapse/">
   <link rel="icon" type="image/svg+xml" href="media/synapse-mark.svg">
   <link rel="preload" href="media/fonts/InstrumentSans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=20261019-2">
+  <link rel="stylesheet" href="styles.css?v=20261019-3">
+  <script src="water.js" defer></script>
+  <script src="background.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -35,7 +37,7 @@
   </header>
   <main id="contenu">
     <section class="hero wrap" id="top" aria-labelledby="hero-title">
-      <div class="ground" aria-hidden="true"></div>
+      <div class="ground" aria-hidden="true"><div class="ground-water" data-synapse-water></div></div>
       <p class="eyebrow hero-eyebrow">Vos échanges. Vos partenaires. Votre ServiceNow.</p>
       <h1 id="hero-title">Toutes vos intégrations.<br><strong>Enfin sous contrôle.</strong></h1>
       <div class="hero-copy">
@@ -120,6 +122,7 @@
     </section>
   </main>
   <section class="closing" aria-labelledby="closing-title">
+    <div class="closing-water" data-synapse-water aria-hidden="true"></div>
     <div class="wrap closing-content">
       <p class="eyebrow">Parlons de vos intégrations.</p>
       <h2 id="closing-title">Montrons-le sur<br><strong>vos échanges.</strong></h2>

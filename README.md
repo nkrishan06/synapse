@@ -1,6 +1,6 @@
 # Synapse par ELO — site vitrine
 
-Site vitrine en français présentant Synapse par ELO, ses fonctionnalités et ses films de démonstration. Identité visuelle : fond clair blanc cassé et bleu ELO. Auteur : Krishan Navas.
+Site vitrine en français présentant Synapse par ELO, ses fonctionnalités et ses films de démonstration. Identité visuelle : fond du portail Synapse bleu, cyan et turquoise, textes blancs sur le fond, contenu sur blanc cassé. Auteur : Krishan Navas.
 
 Site : https://nkrishan06.github.io/synapse/
 
@@ -20,6 +20,7 @@ Ouvrir l’adresse affichée, normalement http://127.0.0.1:8792/. Le fichier `di
 - `dist/index.html` : contenu, vidéos, liens de démonstration vers https://www.elo.blue/.
 - `dist/styles.css` : identité, arrière-plan, composition et adaptations aux petits écrans.
 - `dist/app.js` : une seule vidéo joue à la fois ; repli en cas d’erreur de chargement.
+- `dist/water.js` et `dist/background.js` : rendu du fond repris du module du portail Synapse (`mountWater`), avec sa palette d’origine `#0F8A7A / #1D3F73 / #2F6F8F`. Image calculée au repos, sans animation continue ; repli CSS de même palette si WebGL est indisponible, voile de contraste et fondu vers la partie claire. Le module graphique d’origine est conservé, avec seulement l’export ES retiré pour son chargement en script classique.
 - `dist/media/` : médias autonomes et polices locales.
 
 ## Médias
