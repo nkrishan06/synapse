@@ -1,5 +1,5 @@
 // Author: Krishan Navas. Run against the original workspace, outside the published dist/.
-import { copyFile, mkdir } from 'node:fs/promises';
+import { copyFile, mkdir, readFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -21,17 +21,10 @@ function run(args) {
   if (result.status !== 0) throw new Error(result.stderr || `FFmpeg exited ${result.status}`);
 }
 
-// Preserve the approved French presentation and its sound, with fast-start metadata.
-run(['-i', join(workspace, 'synapse-video/synapse-v4-elevenlabs-equilibre.mp4'), '-c', 'copy', '-movflags', '+faststart', join(media, 'presentation.mp4')]);
-const excerpts = [
-  { name: 'diagnostic', source: 'Transaction en erreur.mp4', start: 0, duration: 27, poster: 15 },
-  { name: 'assistant', source: 'Assistant IA.mp4', start: 35, duration: 27, poster: 8 },
-  { name: 'reconciliation', source: 'Reconciliation.mp4', start: 13, duration: 19, poster: 12 },
-];
-for (const clip of excerpts) {
-  run(['-ss', String(clip.start), '-i', join(workspace, 'synapse-video', clip.source), '-t', String(clip.duration), '-vf', 'scale=1280:-2', '-r', '24', '-c:v', 'libx264', '-preset', 'fast', '-crf', '23', '-pix_fmt', 'yuv420p', '-an', '-movflags', '+faststart', join(media, `${clip.name}.mp4`)]);
-}
-for (const { name, poster } of [{ name: 'presentation', poster: 6 }, ...excerpts]) {
+// Preserve complete final films, including original sound and quality.
+const films = JSON.parse(await readFile(new URL('./media-manifest.json', import.meta.url), 'utf8'));
+for (const { name, source, poster } of films) {
+  run(['-i', join(workspace, source), '-map', '0:v:0', '-map', '0:a:0', '-c', 'copy', '-movflags', '+faststart', join(media, `${name}.mp4`)]);
   run(['-ss', String(poster), '-i', join(media, `${name}.mp4`), '-frames:v', '1', '-vf', 'scale=1280:-2', '-q:v', '3', join(media, `${name}.jpg`)]);
 }
-console.log('Prepared 4 videos, 4 posters, 3 local fonts and the original Synapse mark.');
+console.log(`Prepared ${films.length} complete films with original audio, posters and local brand assets.`);

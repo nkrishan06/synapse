@@ -1,6 +1,6 @@
 # Synapse par ELO — site vitrine
 
-Page française inspirée de la structure et de la direction visuelle de [FlowBoard](https://maofryy.github.io/flowboard-vitrine/), adaptée aux usages et à l’identité Synapse. Auteur : Krishan Navas.
+Page française inspirée de la structure de [FlowBoard](https://maofryy.github.io/flowboard-vitrine/), adaptée aux usages et à l’identité Synapse. Nouveau fond clair blanc cassé et bleu ELO, sans l’ancien décor gris-vert. Auteur : Krishan Navas.
 
 Site : https://nkrishan06.github.io/synapse/
 
@@ -24,11 +24,19 @@ Ouvrir l’adresse affichée, normalement http://127.0.0.1:8792/. Le fichier `di
 
 ## Médias
 
-Le film français approuvé `synapse-v4-elevenlabs-equilibre.mp4` est conservé avec sa bande-son, sans réencodage, avec les métadonnées placées en tête pour le démarrage web.
+Les cinq films finalisés remplacent les anciens extraits. Ils sont conservés intégralement en anglais, en H.264 1920 × 1080 avec leur bande-son AAC originale, sans réencodage ni coupe. Les métadonnées sont placées en tête pour le démarrage web. `scripts/media-manifest.json` identifie précisément les sources :
 
-Les trois démonstrations sont des extraits des captures existantes, exportés sans audio en H.264, largeur 1280 pixels, 24 images/s : diagnostic 0–27 s ; assistant 35–62 s ; réconciliation 13–32 s. Les affiches sont extraites des mêmes vidéos. Les données et résultats affichés viennent de l’environnement de démonstration ; ils ne constituent pas des engagements de performance. Les textes ne prétendent pas que l’IA déclenche les actions ou analyse toutes les transactions.
+| Film | Source dans le workspace | Durée vérifiée |
+| --- | --- | --- |
+| Présentation | `synapse-video/Synapse-first-English.mp4` | 44 s |
+| Configuration IA / RFP | `synapse-video/RFP-v2/Hyperframes-v5/Synapse-RFP-2.mp4` | 40 s |
+| ROI | `synapse-video/RFP-v2/Hyperframes-ROI/Synapse-RFP-English-ROI-Final-v2.mp4` | 52 s |
+| MCP | `synapse-video/RFP-v2/Hyperframes-MCP/Synapse-MCP-English-final.mp4` | 34 s |
+| eBonding | `synapse-video/deuxieme video/Synapse-eBonding-English-v2.mp4` | 50 s |
 
-La présentation dispose d’un résumé textuel dépliable. Les captures sans audio ont une description textuelle adjacente. Une transcription mot à mot et des sous-titres synchronisés du film parlé restent à produire si une conformité complète des médias est requise.
+Les affiches proviennent des mêmes films. Les données sont celles de l’environnement de démonstration. Les montants du film ROI sont des estimations liées au scénario illustré ; la comparaison de délais eBonding est rattachée au cas présenté, à son périmètre et à ses prérequis. L’IA prépare des brouillons ; l’équipe conserve la validation et la mise en service.
+
+La présentation dispose d’un résumé français dépliable ; chaque film a une description française adjacente. Une transcription mot à mot et des sous-titres synchronisés des films restent à produire si une conformité complète des médias est requise.
 
 Pour régénérer les médias depuis le workspace d’origine, avec FFmpeg installé :
 
